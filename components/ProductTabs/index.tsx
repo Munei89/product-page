@@ -1,17 +1,9 @@
-import { ProductTab, Review, ReviewSort } from "../types";
-import { ReviewList } from "./ReviewList";
+import { ProductTab } from "../../types";
+import { ReviewList } from "../ReviewList";
+import styles from "./styles.module.css";
+import { ProductTabsProps } from "./types";
 
 const TABS: ProductTab[] = ["description", "reviews", "delivery"];
-
-type ProductTabsProps = {
-  activeTab: ProductTab;
-  onTabChange: (tab: ProductTab) => void;
-  description: string;
-  reviews: Review[];
-  loadingReviews: boolean;
-  sortReviewsBy: ReviewSort;
-  onSortChange: (sort: ReviewSort) => void;
-};
 
 /**
  * The lower half of the page, where the supporting detail lives behind three
@@ -30,7 +22,7 @@ export function ProductTabs({
   onSortChange,
 }: ProductTabsProps) {
   return (
-    <section style={{ marginTop: 48 }}>
+    <section className={styles.tabs}>
       <div role="tablist" aria-label="Product information">
         {TABS.map((tab) => (
           <button
@@ -39,7 +31,7 @@ export function ProductTabs({
             role="tab"
             aria-selected={activeTab === tab}
             onClick={() => onTabChange(tab)}
-            style={{ textTransform: "capitalize" }}
+            className={styles.tab}
           >
             {tab}
           </button>

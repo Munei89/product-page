@@ -1,8 +1,5 @@
-type QuantitySelectorProps = {
-  quantity: number;
-  onChange: (quantity: number) => void;
-  min?: number;
-};
+import styles from "./styles.module.css";
+import { QuantitySelectorProps } from "./types";
 
 /**
  * A number input for choosing how many of the product to buy.
@@ -18,7 +15,7 @@ export function QuantitySelector({
   min = 1,
 }: QuantitySelectorProps) {
   return (
-    <div style={{ marginTop: 24 }}>
+    <div className={styles.field}>
       <label htmlFor="quantity">Quantity</label>
       <input
         id="quantity"

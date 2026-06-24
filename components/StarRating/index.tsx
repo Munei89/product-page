@@ -1,7 +1,4 @@
-type StarRatingProps = {
-  rating: number;
-  max?: number;
-};
+import { StarRatingProps } from "./types";
 
 /** Accessible star rating. Clamps to [0, max] so it never throws on bad data. */
 export function StarRating({ rating, max = 5 }: StarRatingProps) {

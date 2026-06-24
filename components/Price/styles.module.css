@@ -1,0 +1,13 @@
+.price {
+  margin-top: 24px;
+}
+
+.original {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.final {
+  font-size: 28px;
+  margin: 0;
+}

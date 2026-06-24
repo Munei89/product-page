@@ -1,9 +1,5 @@
-type CouponFieldProps = {
-  code: string;
-  onCodeChange: (code: string) => void;
-  onApply: () => void;
-  message: string;
-};
+import styles from "./styles.module.css";
+import { CouponFieldProps } from "./types";
 
 /**
  * Lets the shopper type a coupon code and apply it. The `message` line below the
@@ -18,7 +14,7 @@ export function CouponField({
   message,
 }: CouponFieldProps) {
   return (
-    <div style={{ marginTop: 24 }}>
+    <div className={styles.field}>
       <label htmlFor="coupon">Coupon</label>
       <input
         id="coupon"

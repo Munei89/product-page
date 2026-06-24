@@ -1,8 +1,5 @@
-type DeliveryCheckerProps = {
-  postcode: string;
-  onPostcodeChange: (postcode: string) => void;
-  message: string;
-};
+import styles from "./styles.module.css";
+import { DeliveryCheckerProps } from "./types";
 
 /**
  * Lets the shopper check how soon the product can reach them by entering a
@@ -16,7 +13,7 @@ export function DeliveryChecker({
   message,
 }: DeliveryCheckerProps) {
   return (
-    <div style={{ marginTop: 24 }}>
+    <div className={styles.field}>
       <label htmlFor="postcode">Check delivery</label>
       <input
         id="postcode"

@@ -1,8 +1,5 @@
-import { Product } from "../types";
-
-type RecentlyViewedListProps = {
-  items: Product[];
-};
+import styles from "./styles.module.css";
+import { RecentlyViewedListProps } from "./types";
 
 /**
  * A small "Recently viewed" list to help shoppers find their way back to
@@ -14,7 +11,7 @@ export function RecentlyViewedList({ items }: RecentlyViewedListProps) {
   if (items.length === 0) return null;
 
   return (
-    <section style={{ marginTop: 48 }}>
+    <section className={styles.section}>
       <h2>Recently viewed</h2>
       {items.map((item) => (
         <article key={item.id}>

@@ -1,12 +1,5 @@
-type ProductActionsProps = {
-  outOfStock: boolean;
-  onAddToCart: () => void;
-  isWishlisted: boolean;
-  wishlistPending: boolean;
-  onToggleWishlist: () => void;
-  /** Live confirmation message (e.g. "Added 2 × … to your cart"). */
-  message: string;
-};
+import styles from "./styles.module.css";
+import { ProductActionsProps } from "./types";
 
 /**
  * The two primary calls to action sitting side by side: add the product to the
@@ -25,7 +18,7 @@ export function ProductActions({
 }: ProductActionsProps) {
   return (
     <>
-      <div style={{ marginTop: 24, display: "flex", gap: 8 }}>
+      <div className={styles.actions}>
         <button type="button" disabled={outOfStock} onClick={onAddToCart}>
           {outOfStock ? "Out of stock" : "Add to cart"}
         </button>

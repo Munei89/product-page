@@ -1,0 +1,12 @@
+.page {
+  padding: 32px;
+}
+
+.layout {
+  display: flex;
+  gap: 32px;
+}
+
+.details {
+  width: 50%;
+}

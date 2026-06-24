@@ -1,12 +1,7 @@
-import { Review, ReviewSort } from "../types";
-import { StarRating } from "./StarRating";
-
-type ReviewListProps = {
-  reviews: Review[];
-  loading: boolean;
-  sortBy: ReviewSort;
-  onSortChange: (sort: ReviewSort) => void;
-};
+import { ReviewSort } from "../../types";
+import { StarRating } from "../StarRating";
+import styles from "./styles.module.css";
+import { ReviewListProps } from "./types";
 
 /**
  * The body of the reviews tab: a sort dropdown followed by the reviews
@@ -40,7 +35,7 @@ export function ReviewList({
 
       {!loading &&
         reviews.map((review) => (
-          <article key={review.id} style={{ borderTop: "1px solid #ddd" }}>
+          <article key={review.id} className={styles.review}>
             <h3>{review.author}</h3>
             <StarRating rating={review.rating} />
             <p>{review.body}</p>

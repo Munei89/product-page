@@ -1,6 +1,5 @@
-type TagListProps = {
-  tags: string[];
-};
+import styles from "./styles.module.css";
+import { TagListProps } from "./types";
 
 /**
  * Shows the product's tags as a simple row of hashtag-style labels — the kind
@@ -9,10 +8,10 @@ type TagListProps = {
  */
 export function TagList({ tags }: TagListProps) {
   return (
-    <div style={{ marginTop: 24 }}>
+    <div className={styles.tags}>
       <p>Tags:</p>
       {tags.map((tag) => (
-        <span key={tag} style={{ marginRight: 8 }}>
+        <span key={tag} className={styles.tag}>
           #{tag}
         </span>
       ))}

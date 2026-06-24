@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+import styles from "./ProductPageClient.module.css";
 import {
   CouponField,
   DeliveryChecker,
@@ -102,8 +103,8 @@ export default function ProductPageClient({
   const outOfStock = product.stock <= 0;
 
   return (
-    <main style={{ padding: 32 }}>
-      <div style={{ display: "flex", gap: 32 }}>
+    <main className={styles.page}>
+      <div className={styles.layout}>
         <ProductGallery
           images={product.images}
           selectedImage={selectedImage}
@@ -112,7 +113,7 @@ export default function ProductPageClient({
         />
 
         {/* Details */}
-        <section style={{ width: "50%" }}>
+        <section className={styles.details}>
           <p>{product.category}</p>
           <h1>{product.name}</h1>
           <p>SKU: {product.sku}</p>

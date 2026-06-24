@@ -1,10 +1,5 @@
-import { Recommendation } from "../types";
-
-type RecommendationGridProps = {
-  recommendations: Recommendation[];
-  loading: boolean;
-  currency: string;
-};
+import styles from "./styles.module.css";
+import { RecommendationGridProps } from "./types";
 
 /**
  * The "You may also like" section — a four-across grid of related products to
@@ -18,18 +13,12 @@ export function RecommendationGrid({
   currency,
 }: RecommendationGridProps) {
   return (
-    <section style={{ marginTop: 48 }}>
+    <section className={styles.section}>
       <h2>You may also like</h2>
 
       {loading && <p>Loading recommendations…</p>}
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 16,
-        }}
-      >
+      <div className={styles.grid}>
         {recommendations.map((item) => (
           <article key={item.id}>
             <img src={item.image} alt={item.name} width={200} height={200} />

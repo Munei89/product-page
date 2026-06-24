@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
-
-type PageShellProps = {
-  children: ReactNode;
-  busy?: boolean;
-};
+import styles from "./styles.module.css";
+import { PageShellProps, ProductErrorProps } from "./types";
 
 /**
  * Shared frame for the page's "nothing to show yet" screens. Each status below
@@ -13,7 +9,7 @@ type PageShellProps = {
  */
 function PageShell({ children, busy }: PageShellProps) {
   return (
-    <main style={{ padding: 32 }} aria-busy={busy || undefined}>
+    <main className={styles.shell} aria-busy={busy || undefined}>
       {children}
     </main>
   );
@@ -27,11 +23,6 @@ export function ProductLoading() {
     </PageShell>
   );
 }
-
-type ProductErrorProps = {
-  message: string;
-  onReload?: () => void;
-};
 
 /**
  * Shown when the product request fails outright. We surface the error message we

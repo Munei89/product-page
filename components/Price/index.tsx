@@ -1,23 +1,18 @@
-type PriceProps = {
-  currency: string;
-  /** Original list price. */
-  price: number;
-  /** Price actually charged (sale and/or coupon applied). */
-  finalPrice: number;
-};
+import styles from "./styles.module.css";
+import { PriceProps } from "./types";
 
 /** Shows the final price, striking through the original when discounted. */
 export function Price({ currency, price, finalPrice }: PriceProps) {
   const discounted = finalPrice < price;
 
   return (
-    <div style={{ marginTop: 24 }}>
+    <div className={styles.price}>
       {discounted && (
-        <p style={{ textDecoration: "line-through", color: "#666" }}>
+        <p className={styles.original}>
           {currency} {price.toFixed(2)}
         </p>
       )}
-      <p style={{ fontSize: 28, margin: 0 }}>
+      <p className={styles.final}>
         {currency} {finalPrice.toFixed(2)}
       </p>
     </div>
